@@ -1,0 +1,18 @@
+<% provide(:page_title, @post.title) %>
+<% provide(:authors, 'active') %>
+
+
+<div class="row justify-content-center">
+  <div class="col-md-10 col-lg-8 ">
+    <h1 class="text-center"><%= @post.title %></h1>
+    <p class="text-center"><%= @post.display_day_published %></p>
+    <p class="text-center">
+      <%= link_to 'Edit', edit_authors_post_path(@post), class: 'btn btn-sm btn-warning' %>
+     | <%= link_to 'Delete', authors_post_path(@post), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: 'Are you sure?'} %>
+    </p>
+    <%= @post.body.html_safe %>
+  </div>
+</div>
+
+
+

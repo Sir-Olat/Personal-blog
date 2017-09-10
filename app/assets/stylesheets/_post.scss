@@ -1,0 +1,110 @@
+.posts.index {
+  .card {
+    border: none;
+    border-radius: 0;
+    height: 400px;
+    margin-bottom: 20px;
+    background-color: white;
+
+    .card-img-top {
+      height: 200px;
+      width: 100%;
+    }
+
+    .card-body {
+      padding: 10px;
+      }
+
+      .card-title {
+        margin-bottom: 0;
+        font-size: 1.3rem;
+        a{
+          color: black;
+          text-decoration: none;
+        }
+      }
+    .tags{
+      margin-bottom: 0.5em;
+      a {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+      }
+    }
+      .card-text {
+        font-size: 0.9rem;
+        color: black;
+        a {
+          text-decoration: none;
+        }
+
+      }
+    }
+  }
+
+.posts.show {
+  .author-bio{
+    background-color: white;
+    padding: 15px 45px;
+    margin: 30px 0;
+    img {
+      border-radius: 50%;
+    }
+    img, h4 {
+      margin-bottom: 10px;
+    }
+    h4 {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    h6 {
+      font-weight: 300;
+    }
+  }
+}
+
+.posts.edit, .posts.new {
+  .card {
+    .card-body{
+      background-color: $light-grey;
+    }
+    .card-title {
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+    .list-group-item {
+      padding: 10px;
+      border-left: 0;
+      border-right: 0;
+      input[type='text'], textarea{
+        font-size: 14px;
+        background-color: $light-grey;
+      }
+      textarea {
+        height: 145px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 34em) {
+  .posts.index .card {
+    height: 440px;
+  }
+  .posts.edit, .post.new {
+    .col-md-8 {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .posts.index .card {
+    height: 420px;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .posts.index .card {
+    height: 415px;
+  }
+}

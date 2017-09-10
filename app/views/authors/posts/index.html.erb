@@ -1,0 +1,16 @@
+<% provide(:page_title, 'All Posts') %>
+<% provide(:authors, 'active') %>
+
+<div class="row">
+  <p>
+    <%= link_to 'New Post', new_authors_post_path, class: 'btn btn-primary btn-lg' %>
+  </p>
+  <br>
+  <table class="table table-striped">
+    <tr>
+      <th colspan="5">Title</th>
+    </tr>
+    <%= render @posts %>
+  </table>
+
+</div>

@@ -1,0 +1,87 @@
+<%= form_for(post, url: url) do |f| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+  <div class="col-md-4">
+
+    <div class="card">
+      <div class="card-body">
+        <% if @post.new_record? %>
+            <h4 class="card-title">New Post</h4>
+        <% else %>
+            <b> Edit</b>
+            <span class="tiny-text"><%= @post.title %></span>
+        <% end %>
+
+      </div>
+      <ul class="list-group list-group-flush">
+
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: 'form-control' %>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label :banner_image_url %>
+            <%= f.text_field :banner_image_url,  class: 'form-control' %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label :description %>
+            <%= f.text_area :description,  class: 'form-control' %>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label 'Tags' %>
+            <%= f.text_area :tag_list,  class: 'form-control' %>
+          </div>
+        </li>
+
+
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="col-md-8">
+
+    <div class="field">
+      <%= f.text_area :body %>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="text-center" style="margin-top: 20px" role="group">
+  <%= f.submit 'Save Post', class: 'btn btn-secondary btn-success btn-md' %> |
+  <% if @post.persisted? %>
+      <%= link_to 'Show', @post, class: 'btn btn-secondary btn-primary btn-md' %>
+      |
+  <% end %>
+      <%= link_to 'Back', authors_posts_path, class: 'btn btn-secondary btn-warning btn-md' %>
+
+</div>
+
+
+
+
+
+
+
+<% end %>

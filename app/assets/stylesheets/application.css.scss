@@ -1,0 +1,42 @@
+@import "bootstrap-grid";
+@import 'bootstrap';
+@import 'colors';
+@import 'navbar';
+@import "post";
+@import 'prism';
+@import "util";
+@import 'pagination';
+
+body {
+  background-color: $light-grey;
+  padding-top: 50px;
+  margin: 20px;
+
+}
+h1, h2, h3, h4, h5, p {
+  color: $primary-text-color;
+}
+
+h1, .card-title {
+  font-weight: bold;
+}
+
+h6{
+color: $secondary-text-color;
+}
+
+h1, h2, h3, h4, h5, h6, .tags {
+  font-family: 'Montserrat', sans-serif;
+}
+p, p span{
+  font-family: 'Merriweather', serif;
+}
+
+
+@media (min-width: 992px) {
+  body {
+    margin: 20px;
+    padding-top: 50px;
+  }
+}
+

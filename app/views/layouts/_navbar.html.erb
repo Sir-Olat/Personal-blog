@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      Bosun's<span class="light">blog</span>
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-expanded="false" aria-controls="navCollapse" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'About', about_path, class: "nav-link #{yield(:about_active)}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %>
+        </li>
+        <% if author_signed_in? %>
+
+          <li class="nav-item dropdown author-nav">
+              <a class="nav-link dropdown-toggle <%= yield(:authors) %>" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= image_tag(current_author.gravatar_image_url) %>
+                <%= current_author.display_name %>
+              </a>
+              <div class="dropdown-menu border-0" aria-labelledby="navbarDropdownMenuLink">
+                <%= link_to 'My Posts', authors_posts_path, class: 'dropdown-item' %>
+                <%= link_to 'Update Profile', authors_edit_profile_path, class: 'dropdown-item' %>
+                <%= link_to 'Change Password', authors_edit_password_path, class: 'dropdown-item' %>
+                <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: 'dropdown-item' %>
+
+              </div>
+            </li>
+
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+</nav>
